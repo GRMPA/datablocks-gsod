@@ -1,5 +1,5 @@
 view: sf_gsod {
-  sql_table_name: GSOD.GSOD ;;
+  sql_table_name: LOOKER_DATABLOCKS.GSOD.GSOD ;;
 
   dimension: station_id {
     type: string

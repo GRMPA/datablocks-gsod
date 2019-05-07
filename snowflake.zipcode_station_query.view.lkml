@@ -9,10 +9,10 @@ view: state_year {
     sql_trigger_value: select count(*) ;;
     sql:
       SELECT distinct year, state
-              FROM GSOD.GSOD
+              FROM LOOKER_DATABLOCKS.GSOD.GSOD
               CROSS JOIN (
               select state
-                from GSOD.ZIPCODE
+                from LOOKER_DATABLOCKS.GSOD.ZIPCODE
                 group by 1
               )
                ;;
@@ -61,14 +61,14 @@ view: sql_query_for_zipcode_station {
                          + SIN(RADIANS(latpoint))
                          * SIN(RADIANS(lat)))) AS distance_in_km
 
-         FROM GSOD.STATIONS as stations
+         FROM LOOKER_DATABLOCKS.GSOD.STATIONS as stations
          CROSS JOIN (
           SELECT  latitude  AS latpoint,  longitude AS longpoint, zip_code,
             City,
             ({0}) as year,
             100.0 AS radius,
             111.045 AS distance_unit
-            from GSOD.ZIPCODE
+            from LOOKER_DATABLOCKS.GSOD.ZIPCODE
             -- where zip_code in (11211, 20171, 20170, 10009)
              where State in ('{1}')
             and latitude is not null

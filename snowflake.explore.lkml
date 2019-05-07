@@ -1,8 +1,11 @@
 include: "snowflake.*.view.lkml"
 
 explore: gsod {
+  label: "Weather"
+  view_label: "Weather"
+  description: "Global Surface Summary of the Day (GSOD) by ZIP code from 1920 through the previous day (Source: NOAA and Google)"
   from: sf_gsod
-  join: zipcode_station {
+    join: zipcode_station {
     from: sf_zipcode_station
     view_label: "Geography"
     type: left_outer
@@ -33,6 +36,8 @@ explore: gsod {
 }
 
 explore: zipcode_county {
+  hidden: yes
+  label: "Weather Stations"
   from: sf_zipcode_county
   join: zipcode_facts {
     from: sf_zipcode_facts

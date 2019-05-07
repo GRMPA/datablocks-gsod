@@ -1,5 +1,5 @@
 view: sf_zipcode_facts {
-  sql_table_name: GSOD.ZIPCODE ;;
+  sql_table_name: LOOKER_DATABLOCKS.GSOD.ZIPCODE ;;
 
   dimension: zipcode {
     primary_key: yes

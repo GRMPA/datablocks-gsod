@@ -6,7 +6,7 @@ view: sf_zipcode_county {
     persist_for: "10000 hours"
     sql: SELECT zcta5, state, geoid as county_code  FROM
       (select *,  ROW_NUMBER() OVER (PARTITION BY zcta5 ORDER BY ZPOPPCT DESC) row_num
-      from GSOD.ZCTA_COUNTY_MAP)
+      from LOOKER_DATABLOCKS.GSOD.ZCTA_COUNTY_MAP)
       where row_num = 1;;
   }
 

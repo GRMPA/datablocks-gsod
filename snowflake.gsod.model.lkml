@@ -1,5 +1,5 @@
 connection: "fivetran"
 
-label: "Data Sets"
+label: "External Data Sets"
 
 include: "snowflake.explore"

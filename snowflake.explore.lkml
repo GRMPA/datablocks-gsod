@@ -1,6 +1,12 @@
 include: "snowflake.*.view.lkml"
 
+access_grant: datablocks {
+  user_attribute: access_datablocks
+  allowed_values: ["yes"]
+}
+
 explore: gsod {
+  required_access_grants: [datablocks]
   label: "Weather"
   view_label: "Weather"
   description: "Global Surface Summary of the Day (GSOD) by ZIP code from 1920 through the previous day (Source: NOAA and Google)"
@@ -36,6 +42,7 @@ explore: gsod {
 }
 
 explore: zipcode_county {
+  required_access_grants: [datablocks]
   hidden: yes
   label: "Weather Stations"
   from: sf_zipcode_county

@@ -40,6 +40,7 @@ view: sf_stations {
 
   dimension: country {
     type: string
+    map_layer_name: countries
     sql: ${TABLE}.country ;;
   }
 
@@ -73,6 +74,7 @@ view: sf_stations {
 
   dimension: state {
     type: string
+    map_layer_name: us_states
     sql: ${TABLE}.state ;;
   }
 

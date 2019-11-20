@@ -1,4 +1,4 @@
-connection: "fivetran"
+connection: "looker_datablocks"
 
 label: "External Data Sets"
 

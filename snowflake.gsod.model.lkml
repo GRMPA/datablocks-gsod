@@ -1,4 +1,4 @@
-connection: "looker_datablocks"
+connection: "looker_scratch"
 
 label: "External Data Sets"
 
